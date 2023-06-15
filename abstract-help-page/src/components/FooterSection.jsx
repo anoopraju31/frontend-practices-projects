@@ -1,13 +1,15 @@
 import React from 'react'
 
-const FooterSection = ({title, items, contact}) => {
+const FooterSection = ({section}) => {
+    const {title, items, contact} = section
+    console.log(section);
   return (
     <section className='text-white'>
         <h2 className='py-2 text-xl font-bold'> {title} </h2>
 
         <div>
             {
-                items.map(item => <p key={item}> item </p>)
+                items.map(item => <p key={item}> {item} </p>)
             }
         </div>
 
