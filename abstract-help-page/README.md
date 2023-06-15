@@ -14,4 +14,4 @@ To run the project
 npm start
 ```
 ## Screenshots of the design
-![Abstract Help Page Design](/src/assets/design/abstract.webp)
+![Abstract Help Page Design](https://raw.githubusercontent.com/anoopraju31/frontend-practices-projects/master/abstract-help-page/src/assets/design/abstract.webp)
