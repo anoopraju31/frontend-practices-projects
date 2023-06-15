@@ -1,10 +1,11 @@
-import { HeroSection, Navbar } from './components'
+import { FeatureSection, HeroSection, Navbar } from './components'
 
 const App = () => {
 	return (
 		<div className=''>
 			<Navbar />
 			<HeroSection />
+			<FeatureSection />
 		</div>
 	)
 }
