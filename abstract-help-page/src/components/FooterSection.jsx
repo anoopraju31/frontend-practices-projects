@@ -4,7 +4,7 @@ const FooterSection = ({section}) => {
     const {title, items, contact} = section
     console.log(section);
   return (
-    <section className='text-white'>
+    <section className='text-white mb-10'>
         <h2 className='py-2 text-xl font-bold'> {title} </h2>
 
         <div>
