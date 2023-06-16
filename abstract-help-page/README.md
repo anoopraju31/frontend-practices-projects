@@ -1,7 +1,7 @@
 # Projects - [Abstract Help Page](https://www.frontendpractice.com/projects/abstract)
 
-This is a Level 1 project in [frontend practice](https://www.frontendpractice.com/projects)
-You can view the deploy project [here](https://zippy-naiad-600e27.netlify.app/)
+- This is a Level 1 project in [frontend practice](https://www.frontendpractice.com/projects).
+- You can view the deploy project [here](https://zippy-naiad-600e27.netlify.app/)
 
 ## Installation
 
