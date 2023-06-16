@@ -12,7 +12,7 @@ const DropdownLink = ({title, link, description, styles, present}) => (
 
 const DropdownMenu = () => {
   return (
-    <div className='block lg:hidden p-5 bg-blue-700 text-white font-medium'>
+    <div className='block lg:hidden w-full z-50 p-5 bg-blue-700 text-white font-medium'>
         <ul className='flex flex-col gap-6 text-lg '>
             {
                 navItems.map(({id, title, link}) => <DropdownLink key={id} title={title} link={link} />)

@@ -1,11 +1,11 @@
 import React from 'react'
 
-const Logo = () => {
+const Logo = ({isFillWhite}) => {
     return (
         <svg 
             role='img' 
             aria-labelledby='logo'
-            className='w-14 h-7' 
+            className={`w-14 h-7 ${isFillWhite && 'fill-white'}`}
             xmlns='http://www.w3.org/2000/svg' 
             width='45' 
             height='21'

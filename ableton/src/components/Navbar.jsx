@@ -3,6 +3,7 @@ import { FaPlus, FaMinus } from 'react-icons/fa'
 import {GoTriangleUp, GoTriangleDown } from 'react-icons/go'
 import { DropdownMenu, Logo, MoreDropdown } from './'
 import { navItems } from '../utills/navbarItems'
+import {useCurrentWidth} from '../hooks'
 
 const NavItem = ({ title, link}) => (
   <li>
@@ -17,12 +18,14 @@ const NavItem = ({ title, link}) => (
 const Navbar = () => {
   const [showMore, setShowMore] = useState(false)
   const [showMenu, setShowMenu] = useState(false)
+  const currentWidth = useCurrentWidth()
+
   return (
-    <div>
-      <nav className='p-5 flex justify-start lg:justify-between items-center'>
+    <div className=''>
+      <nav className={`p-5 flex justify-start lg:justify-between items-center ${showMenu && (currentWidth < 1024) && 'bg-blue-700'}`}>
         <div className='flex items-center gap-8'>
           <a href='/'>
-            <Logo />
+            <Logo isFillWhite={showMenu} />
           </a>
 
           <div>
@@ -54,7 +57,7 @@ const Navbar = () => {
           <a className='text-sm xl:text-base font-medium' href="/"> Log in or register </a>
         </div>
 
-        <div className="flex lg:hidden items-center gap-3 text-lg font-medium" onClick={() => setShowMenu(prev => !prev)}>
+        <div className={`flex lg:hidden items-center gap-3 text-lg font-medium ${showMenu && 'text-white'}`} onClick={() => setShowMenu(prev => !prev)}>
             <span> Menu </span>
             {
               showMenu?
@@ -69,24 +72,21 @@ const Navbar = () => {
         {showMore && <MoreDropdown />}
       </div>
 
-      {
-        !showMenu &&
-        <div className='p-5 border-t-2 border-gray-200'>
-          <ul className='flex gap-5'>
-            <li>
-              <a className='text-sm font-medium text-orange-400' href='/about'> About </a>
-            </li>
-            
-            <li>
-              <a className='text-sm font-medium' href='/jobs'> Jobs </a>
-            </li>
+      <div className={`${showMenu && (currentWidth < 1024) && 'hidden'} w-full p-5 -z-50 bg-white border-t-2 border-gray-200`}>
+        <ul className='flex gap-5'>
+          <li>
+            <a className='text-sm font-medium text-orange-400' href='/about'> About </a>
+          </li>
+          
+          <li>
+            <a className='text-sm font-medium' href='/jobs'> Jobs </a>
+          </li>
 
-            <li>
-              <a className='text-sm font-medium' href='/apprenticeships'> Apprenticeships </a>
-            </li>
-          </ul>
-        </div>
-      }
+          <li>
+            <a className='text-sm font-medium' href='/apprenticeships'> Apprenticeships </a>
+          </li>
+        </ul>
+      </div>
 
       {
         showMenu &&
