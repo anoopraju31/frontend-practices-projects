@@ -4,6 +4,7 @@ import {GoTriangleUp, GoTriangleDown } from 'react-icons/go'
 import { DropdownMenu, Logo, MoreDropdown } from './'
 import { navItems } from '../utills/navbarItems'
 import {useCurrentWidth} from '../hooks'
+import { AnimatePresence, motion} from 'framer-motion'
 
 const NavItem = ({ title, link}) => (
   <li>
@@ -21,8 +22,11 @@ const Navbar = () => {
   const currentWidth = useCurrentWidth()
 
   return (
-    <div className=''>
-      <nav className={`p-5 flex justify-start lg:justify-between items-center ${showMenu && (currentWidth < 1024) && 'bg-blue-700'}`}>
+    <div className='relative'>
+      <motion.nav 
+        animate={{background: showMenu && (currentWidth < 1024)? 'rgb(29, 78, 216)' : '#fff'}}
+        transition={{duration: 1}}
+        className={`p-5 z-[1000] flex justify-start lg:justify-between items-center ${showMenu && (currentWidth < 1024) && 'bg-blue-700'}`}>
         <div className='flex items-center gap-8'>
           <a href='/'>
             <Logo isFillWhite={showMenu} />
@@ -66,10 +70,12 @@ const Navbar = () => {
             }
 
         </div>
-      </nav>
+      </motion.nav>
 
       <div className='hidden lg:block'>
-        {showMore && <MoreDropdown />}
+        <AnimatePresence>
+          {showMore && <MoreDropdown />}
+        </AnimatePresence>
       </div>
 
       <div className={`${showMenu && (currentWidth < 1024) && 'hidden'} w-full p-5 -z-50 bg-white border-t-2 border-gray-200`}>
@@ -88,10 +94,12 @@ const Navbar = () => {
         </ul>
       </div>
 
-      {
-        showMenu &&
-        <DropdownMenu />
-      }
+      <AnimatePresence>
+        {
+          showMenu &&
+          <DropdownMenu />
+        }
+      </AnimatePresence>
     </div>
   )
 }

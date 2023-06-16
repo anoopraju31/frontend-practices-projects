@@ -1,5 +1,7 @@
 import React from 'react'
+import { motion } from 'framer-motion'
 import { navMoreFromItems, navMoreOnItems } from '../utills/navbarItems'
+import { reveal } from '../utills/animations'
 
 const Link = ({title, link, description, present}) => (
   <li>
@@ -15,7 +17,13 @@ const Link = ({title, link, description, present}) => (
 
 const MoreDropdown = () => {
   return (
-    <div className='p-5'>
+    <motion.div 
+      variants={reveal}
+      initial='hiddenVariant' 
+      animate='revealedVariant' 
+      exit='hiddenVariant'
+      transition={{duration: 0.5}} 
+      className='p-5 -z-30'>
       <div>
         <h2 className='text-2xl font-medium mb-2'> More on Ableton.com: </h2>
 
@@ -35,7 +43,7 @@ const MoreDropdown = () => {
           }
         </ul>
       </div>
-    </div>
+    </motion.div>
   )
 }
 

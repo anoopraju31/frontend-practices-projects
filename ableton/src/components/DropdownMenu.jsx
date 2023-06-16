@@ -1,5 +1,7 @@
 import React from 'react'
+import { motion } from 'framer-motion'
 import { navItems, navMoreFromItems, navMoreOnItems } from '../utills/navbarItems'
+import { reveal } from '../utills/animations'
 
 const DropdownLink = ({title, link, description, styles, present}) => (
     <li>
@@ -12,7 +14,14 @@ const DropdownLink = ({title, link, description, styles, present}) => (
 
 const DropdownMenu = () => {
   return (
-    <div className='block lg:hidden w-full z-50 p-5 bg-blue-700 text-white font-medium'>
+    <motion.div 
+        variants={reveal}
+        initial='hiddenVariant' 
+        animate='revealedVariant' 
+        exit='exitVariant'
+        transition={{duration: 1}} 
+        className='block lg:hidden w-full -z-50 p-5 bg-blue-700 text-white font-medium'
+    >
         <ul className='flex flex-col gap-6 text-lg '>
             {
                 navItems.map(({id, title, link}) => <DropdownLink key={id} title={title} link={link} />)
@@ -39,7 +48,7 @@ const DropdownMenu = () => {
                 }
             </ul>
         </div>
-    </div>
+    </motion.div>
   )
 }
 
