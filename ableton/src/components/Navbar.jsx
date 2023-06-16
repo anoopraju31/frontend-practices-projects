@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { FaPlus, FaMinus } from 'react-icons/fa'
 import {GoTriangleUp, GoTriangleDown } from 'react-icons/go'
-import { Logo, MoreDropdown } from './'
+import { DropdownMenu, Logo, MoreDropdown } from './'
 import { navItems } from '../utills/navbarItems'
 
 const NavItem = ({ title, link}) => (
@@ -86,6 +86,11 @@ const Navbar = () => {
             </li>
           </ul>
         </div>
+      }
+
+      {
+        showMenu &&
+        <DropdownMenu />
       }
     </div>
   )
