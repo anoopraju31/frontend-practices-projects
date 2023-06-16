@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { FaPlus, FaMinus } from 'react-icons/fa'
-import { Logo } from './'
+import { Logo, MoreDropdown } from './'
 import { navItems } from '../utills/navbarItems'
 
 const NavItem = ({ title, link}) => (
@@ -17,7 +17,7 @@ const Navbar = () => {
   const [showMore, setShowMore] = useState(false)
   return (
     <div>
-      <nav className='p-5 flex justify-between items-center border-b-2 border-gray-200'>
+      <nav className='p-5 flex justify-between items-center'>
         <div className='flex items-center gap-8'>
           <a href='/'>
             <Logo />
@@ -53,7 +53,11 @@ const Navbar = () => {
         </div>
       </nav>
 
-      <div className='p-5'>
+      <div className='hidden lg:block'>
+        {showMore && <MoreDropdown />}
+      </div>
+
+      <div className='p-5 border-t-2 border-gray-200'>
         <ul className='flex gap-5'>
           <li>
             <a className='text-sm font-medium text-orange-400' href='/about'> About </a>
