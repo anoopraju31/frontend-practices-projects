@@ -4,8 +4,8 @@ const Logo = () => {
     return (
         <svg 
             role='img' 
-            ariaLabelledby='logo'
-            class='w-14 h-7' 
+            aria-labelledby='logo'
+            className='w-14 h-7' 
             xmlns='http://www.w3.org/2000/svg' 
             width='45' 
             height='21'
