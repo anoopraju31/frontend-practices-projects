@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { FaPlus, FaMinus } from 'react-icons/fa'
+import {GoTriangleUp, GoTriangleDown } from 'react-icons/go'
 import { Logo, MoreDropdown } from './'
 import { navItems } from '../utills/navbarItems'
 
@@ -15,9 +16,10 @@ const NavItem = ({ title, link}) => (
 )
 const Navbar = () => {
   const [showMore, setShowMore] = useState(false)
+  const [showMenu, setShowMenu] = useState(false)
   return (
     <div>
-      <nav className='p-5 flex justify-between items-center'>
+      <nav className='p-5 flex justify-start lg:justify-between items-center'>
         <div className='flex items-center gap-8'>
           <a href='/'>
             <Logo />
@@ -51,27 +53,40 @@ const Navbar = () => {
 
           <a className='text-sm xl:text-base font-medium' href="/"> Log in or register </a>
         </div>
+
+        <div className="flex lg:hidden items-center gap-3 text-lg font-medium" onClick={() => setShowMenu(prev => !prev)}>
+            <span> Menu </span>
+            {
+              showMenu?
+              <GoTriangleUp /> :
+              <GoTriangleDown />
+            }
+
+        </div>
       </nav>
 
       <div className='hidden lg:block'>
         {showMore && <MoreDropdown />}
       </div>
 
-      <div className='p-5 border-t-2 border-gray-200'>
-        <ul className='flex gap-5'>
-          <li>
-            <a className='text-sm font-medium text-orange-400' href='/about'> About </a>
-          </li>
-          
-          <li>
-            <a className='text-sm font-medium' href='/jobs'> Jobs </a>
-          </li>
+      {
+        !showMenu &&
+        <div className='p-5 border-t-2 border-gray-200'>
+          <ul className='flex gap-5'>
+            <li>
+              <a className='text-sm font-medium text-orange-400' href='/about'> About </a>
+            </li>
+            
+            <li>
+              <a className='text-sm font-medium' href='/jobs'> Jobs </a>
+            </li>
 
-          <li>
-            <a className='text-sm font-medium' href='/apprenticeships'> Apprenticeships </a>
-          </li>
-        </ul>
-      </div>
+            <li>
+              <a className='text-sm font-medium' href='/apprenticeships'> Apprenticeships </a>
+            </li>
+          </ul>
+        </div>
+      }
     </div>
   )
 }
