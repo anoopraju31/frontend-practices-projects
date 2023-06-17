@@ -10,8 +10,8 @@ const HighlightedText = ({ text, additionalWords }) => {
 const TextBody = ({title, highlightedTitleText, description}) => {
     return (
         <div className='mx-[8.33%] py-20 flex justify-center items-center'>
-            <div className='w-full md:w-9/12 lg:w-2/3'>
-                <h3 className='text-lg font-medium mb-4'> 
+            <div className='w-full md:w-9/12 xl:w-2/3'>
+                <h3 className='text-lg lg:text-2xl font-medium mb-4'> 
                     {
                         highlightedTitleText?
                         <HighlightedText text={title} additionalWords={highlightedTitleText} /> :
@@ -22,7 +22,7 @@ const TextBody = ({title, highlightedTitleText, description}) => {
                     description &&
                     <>
                     {
-                        description.map((des, idx) => <p key={idx} className='text-sm font-normal lg:font-medium mb-2'> {des} </p>)
+                        description.map((des, idx) => <p key={idx} className='text-base lg:text-lg font-normal mb-2'> {des} </p>)
                     }
                     </>
                 }
