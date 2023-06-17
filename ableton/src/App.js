@@ -1,4 +1,5 @@
 import { HeroSection, Navbar, TextBody } from './components'
+import { textBody } from './utills/textBody'
 
 const App = () => {
 	return (
@@ -6,10 +7,15 @@ const App = () => {
 			<Navbar />
 			<HeroSection />
 			{/* <div className='h-[600vh] bg-slate-500'></div> */}
-			<TextBody
-				title='We make Live, Push and Link — unique software and hardware for music creation and performance. With these products, our community of users creates amazing things.'
-				highlightedTitleText={['Live', 'Push', 'Link']}
-			/>
+
+			{textBody.map(({ id, title, highlightedTitleText, description }) => (
+				<TextBody
+					key={id}
+					title={title}
+					highlightedTitleText={highlightedTitleText}
+					description={description}
+				/>
+			))}
 		</div>
 	)
 }

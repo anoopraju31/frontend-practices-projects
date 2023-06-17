@@ -7,7 +7,7 @@ const HighlightedText = ({ text, additionalWords }) => {
     return <div dangerouslySetInnerHTML={{ __html: highlightedText }} />
 }
 
-const TextBody = ({title, highlightedTitleText}) => {
+const TextBody = ({title, highlightedTitleText, description}) => {
     return (
         <div className='mx-[8.33%] py-20 flex justify-center items-center'>
             <div className='w-full md:w-9/12 lg:w-2/3'>
@@ -18,7 +18,14 @@ const TextBody = ({title, highlightedTitleText}) => {
                         title
                     } 
                 </h3>
-                <p className='text-sm font-normal lg:font-medium'> Ableton was founded in 1999 and released the first version of Live in 2001. Our products are used by a community of dedicated musicians, sound designers, and artists from across the world. </p>
+                {
+                    description &&
+                    <>
+                    {
+                        description.map((des, idx) => <p key={idx} className='text-sm font-normal lg:font-medium mb-2'> {des} </p>)
+                    }
+                    </>
+                }
             </div>
         </div>
     )
