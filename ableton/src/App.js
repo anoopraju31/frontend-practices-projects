@@ -32,6 +32,8 @@ const App = () => {
 				title={textBody[2].title}
 				description={textBody[2].description}
 			/>
+
+			<ProductCollage position='left' />
 		</div>
 	)
 }
