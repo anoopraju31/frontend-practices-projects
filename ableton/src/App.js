@@ -1,4 +1,10 @@
-import { HeroSection, Navbar, ProductCollage, TextBody } from './components'
+import {
+	HeroSection,
+	JuanpeBolivar,
+	Navbar,
+	ProductCollage,
+	TextBody,
+} from './components'
 import { textBody } from './utills/textBody'
 
 const App = () => {
@@ -18,6 +24,13 @@ const App = () => {
 			<TextBody
 				title={textBody[1].title}
 				description={textBody[1].description}
+			/>
+
+			<JuanpeBolivar />
+
+			<TextBody
+				title={textBody[2].title}
+				description={textBody[2].description}
 			/>
 		</div>
 	)
