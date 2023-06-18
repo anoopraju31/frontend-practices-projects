@@ -47,6 +47,8 @@ const App = () => {
 				title={textBody[4].title}
 				description={textBody[4].description}
 			/>
+
+			<ProductCollage position='middle' />
 		</div>
 	)
 }

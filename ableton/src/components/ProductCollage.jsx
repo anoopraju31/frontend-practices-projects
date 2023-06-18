@@ -19,8 +19,17 @@ const ProductCollage = ({position}) => {
             <div className='w-[33.33vw] 2xl:w-[533.28px] h-[25vw] 2xl:h-[400px]  bg-no-repeat bg-cover bg-pos bg-photo-3'/>
             <div className='w-[33.33vw] 2xl:w-[533.28px] h-[25vw] 2xl:h-[400px] mt-[8.33vw] 2xl:mt-[133.28px]  bg-no-repeat bg-cover bg-pos bg-photo-4'/>
           </div>
-          <div className='w-[41.66%] h-[41.66vw] 2xl:h-[666.56px] ml-[16.66vw] 2xl:ml-[266.56px] inline-block relative z-10  bg-no-repeat bg-cover bg-pos bg-photo-5' />
+          <div className='w-[41.66%] h-[41.66vw] 2xl:h-[666.56px] ml-[16.66vw] 2xl:ml-[266.56px] inline-block relative z-10 bg-no-repeat bg-cover bg-pos bg-photo-5' />
         </div> 
+      }
+
+      {
+        position === 'middle' &&
+        <div className='max-w-[1600px] h-[58.33vw] 2xl:h-[933.28px] relative'>
+          <div className="w-[66.66vw] 2xl:w-[1066.56px] h-[58.33vw] 2xl:h-[933.28px] bg-[#D5B3FF] absolute top-0 left-[16.66vw] 2xl:left-[266.56px] z-0" />
+          <div className='w-[33.33vw] 2xl:w-[533.28px] h-[25vw] 2xl:h-[400px] ml-[8.33vw] 2xl:ml-[133.28px] top-[16.66vw] 2xl:top-[266.56px] relative z-[1] bg-no-repeat bg-cover bg-pos bg-photo-6' />
+          <div className='w-[41.66vw] 2xl:w-[666.56px] h-[41.66vw] 2xl:h-[666.56px] absolute top-[8.33vw] 2xl:top-[133.28px] right-0 z-[1] bg-no-repeat bg-cover bg-pos bg-photo-7' />
+        </div>
       }
     </>
   )

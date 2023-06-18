@@ -10,6 +10,8 @@ module.exports = {
 				'photo-3': "url('/src/assets/img/photo-3.jpg')",
 				'photo-4': "url('/src/assets/img/photo-4.jpg')",
 				'photo-5': "url('/src/assets/img/photo-5.jpg')",
+				'photo-6': "url('/src/assets/img/photo-6-a.jpg')",
+				'photo-7': "url('/src/assets/img/photo-7.jpg')",
 			},
 		},
 	},
