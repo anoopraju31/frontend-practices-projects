@@ -1,4 +1,4 @@
-import { HeroSection, Navbar, TextBody } from './components'
+import { HeroSection, Navbar, ProductCollage, TextBody } from './components'
 import { textBody } from './utills/textBody'
 
 const App = () => {
@@ -6,16 +6,14 @@ const App = () => {
 		<div className='max-w-[1600px] mx-auto bg-white'>
 			<Navbar />
 			<HeroSection />
-			{/* <div className='h-[600vh] bg-slate-500'></div> */}
 
-			{textBody.map(({ id, title, highlightedTitleText, description }) => (
-				<TextBody
-					key={id}
-					title={title}
-					highlightedTitleText={highlightedTitleText}
-					description={description}
-				/>
-			))}
+			<TextBody
+				title={textBody[0].title}
+				highlightedTitleText={textBody[0].highlightedTitleText}
+				description={textBody[0].description}
+			/>
+
+			<ProductCollage />
 		</div>
 	)
 }
