@@ -14,6 +14,11 @@ const App = () => {
 			/>
 
 			<ProductCollage />
+
+			<TextBody
+				title={textBody[1].title}
+				description={textBody[1].description}
+			/>
 		</div>
 	)
 }
