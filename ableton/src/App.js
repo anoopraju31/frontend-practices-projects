@@ -1,6 +1,7 @@
 import {
 	HeroSection,
 	JuanpeBolivar,
+	Media,
 	Navbar,
 	ProductCollage,
 	TextBody,
@@ -39,6 +40,8 @@ const App = () => {
 				title={textBody[3].title}
 				description={textBody[3].description}
 			/>
+
+			<Media />
 		</div>
 	)
 }
