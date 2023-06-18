@@ -42,6 +42,11 @@ const App = () => {
 			/>
 
 			<Media />
+
+			<TextBody
+				title={textBody[4].title}
+				description={textBody[4].description}
+			/>
 		</div>
 	)
 }
