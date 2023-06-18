@@ -1,22 +1,44 @@
-import React, { useState } from 'react'
+import React, { useRef, useEffect, useState } from 'react'
 import { BiPlay } from 'react-icons/bi'
 import YouTube from 'react-youtube'
 import juanpeBolivarImg from '../assets/img/poster-juanpe.jpg'
 
 const JuanpeBolivar = () => {
     const [playVideo, setPlayVideo] = useState(false)
+    const divRef = useRef(null)
+    const [divHeight, setDivHeight] = useState(0)
 
+    useEffect(() => {
+        const updateDivWidth = () => {
+            if (divRef.current) {
+                setDivHeight(divRef.current.offsetWidth * 0.5625)
+            }
+        }
+    
+        // Initial width calculation
+        updateDivWidth()
+    
+        // Event listener to update width on resize
+        window.addEventListener('resize', updateDivWidth)
+    
+        // Clean up the event listener on component unmount
+        return () => {
+            window.removeEventListener('resize', updateDivWidth)
+        }
+    }, [])
+    
     const opts = {
-        height: '475px',
+        height: divHeight,
         width: '100%',
         playerVars: {
           // https://developers.google.com/youtube/player_parameters
           autoplay: 1,
         },
-      };
-  return (
+    }
+    
+    return (
     <div className='mx-[8.33%]'>
-        <div className='w-full md:w-9/12 xl:w-2/3 mx-auto'>
+        <div className='w-full md:w-9/12 xl:w-2/3 mx-auto' ref={divRef}>
             {
                 playVideo?
                 <YouTube videoId="9SbnhgjeyXA" opts={opts} /> :

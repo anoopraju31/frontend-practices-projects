@@ -19,7 +19,7 @@ const App = () => {
 				description={textBody[0].description}
 			/>
 
-			<ProductCollage />
+			<ProductCollage position='right' />
 
 			<TextBody
 				title={textBody[1].title}
