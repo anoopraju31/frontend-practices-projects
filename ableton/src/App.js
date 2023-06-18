@@ -1,5 +1,6 @@
 import {
 	HeroSection,
+	JobTeaser,
 	JuanpeBolivar,
 	Media,
 	Navbar,
@@ -54,6 +55,8 @@ const App = () => {
 				title={textBody[5].title}
 				description={textBody[5].description}
 			/>
+
+			<JobTeaser />
 		</div>
 	)
 }
