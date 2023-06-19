@@ -1,0 +1,14 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+    --hero-section-height: calc(100vh - 134px)
+}
+
+.bg-pos {
+    /* background-repeat: no-repeat; */
+    /* background-size: contain; */
+    background-position: 50% 50%;
+    /* background-image: url('/src/assets/img/header.avif'); */
+}
