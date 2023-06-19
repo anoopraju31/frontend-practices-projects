@@ -12,6 +12,7 @@ module.exports = {
 				'photo-5': "url('/src/assets/img/photo-5.jpg')",
 				'photo-6': "url('/src/assets/img/photo-6-a.jpg')",
 				'photo-7': "url('/src/assets/img/photo-7.jpg')",
+				'photo-8': "url('/src/assets/img/photo-8.jpg')",
 			},
 		},
 	},
