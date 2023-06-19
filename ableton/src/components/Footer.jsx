@@ -1,6 +1,8 @@
 import React from 'react'
 import { RiArrowRightSLine } from 'react-icons/ri'
+import { FaFacebook, FaTwitter, FaYoutube, FaInstagram } from 'react-icons/fa'
 import { footerItems } from '../utills/footerItems'
+import Icon from './Icon'
 
 const FooterLinks = ({title, links}) => (
     <div>
@@ -33,7 +35,10 @@ const Footer = () => {
                 <FooterLinks title={footerItems[1].title} links={footerItems[1].links} />
             </div>
             <div className='flex gap-4'>
-                
+                <Icon background='bg-[#3477F2]' link='https://www.facebook.com' MediaIcon={<FaFacebook />} />
+                <Icon background='bg-[#1DA1F2]' link='https://www.facebook.com' MediaIcon={<FaTwitter />} />
+                <Icon background='bg-[#FF001D]' link='https://www.facebook.com' MediaIcon={<FaYoutube />} />
+                <Icon background='bg-[#F77737]' link='https://www.facebook.com' MediaIcon={<FaInstagram />} />
             </div>
         </div>
     </div>

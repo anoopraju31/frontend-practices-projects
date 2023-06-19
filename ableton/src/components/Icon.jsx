@@ -1,9 +1,13 @@
 import React from 'react'
 
-const Icons = () => {
+const Icon = ({background, link, MediaIcon}) => {
   return (
-    <div>Icons</div>
+    <div className={`p-2 text-2xl ${background} text-white`}>
+      <a href={link}>
+        {MediaIcon}
+      </a>
+    </div>
   )
 }
 
-export default Icons
+export default Icon
