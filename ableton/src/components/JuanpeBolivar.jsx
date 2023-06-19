@@ -44,11 +44,15 @@ const JuanpeBolivar = () => {
                 <YouTube videoId="9SbnhgjeyXA" opts={opts} /> :
                 <div className="relative" onClick={() => setPlayVideo(prev => !prev)}>
                     <img src={juanpeBolivarImg} alt="poster juanpe" />
-                    <div className='w-20 h-20 rounded-full bg-blue-700 flex justify-center items-center text-white absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2'>
-                        <BiPlay size={40} />
+                    <div className='w-14 lg:w-20 h-14 lg:h-20 rounded-full bg-blue-700 text-3xl lg:text-4xl flex justify-center items-center text-white absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2'>
+                        <BiPlay />
                     </div>
                 </div>
             }
+
+            <div className='mt-2 text-sm font-medium'>
+                <p> Why Ableton - Juanpe Bolivar </p>
+            </div>
         </div>
     </div>
   )
