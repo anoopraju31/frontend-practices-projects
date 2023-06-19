@@ -33,7 +33,7 @@ export const expand = {
 
 export const textPop = {
 	start: {
-		y: 100,
+		y: 20,
 		opacity: 0,
 	},
 	stop: {

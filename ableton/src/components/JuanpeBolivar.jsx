@@ -1,7 +1,9 @@
 import React, { useRef, useEffect, useState } from 'react'
 import { BiPlay } from 'react-icons/bi'
 import YouTube from 'react-youtube'
+import { motion} from 'framer-motion'
 import juanpeBolivarImg from '../assets/img/poster-juanpe.jpg'
+import { textPop } from '../utills/animations'
 
 const JuanpeBolivar = () => {
     const [playVideo, setPlayVideo] = useState(false)
@@ -37,7 +39,13 @@ const JuanpeBolivar = () => {
     }
     
     return (
-    <div className='mx-[8.33%]'>
+    <motion.div 
+        variants={textPop} 
+        initial='start' 
+        whileInView='stop'  
+        transition={{duration: 1.5}}
+        className='mx-[8.33%]'
+    >
         <div className='w-full md:w-9/12 xl:w-2/3 mx-auto' ref={divRef}>
             {
                 playVideo?
@@ -50,11 +58,17 @@ const JuanpeBolivar = () => {
                 </div>
             }
 
-            <div className='mt-2 text-sm font-medium'>
+            <motion.div 
+                variants={textPop} 
+                initial='start' 
+                whileInView='stop'  
+                transition={{ duration: 1 }}
+                className='mt-2 text-sm font-medium'
+            >
                 <p> Why Ableton - Juanpe Bolivar </p>
-            </div>
+            </motion.div>
         </div>
-    </div>
+    </motion.div>
   )
 }
 
