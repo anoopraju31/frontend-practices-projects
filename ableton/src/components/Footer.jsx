@@ -1,7 +1,7 @@
 import React from 'react'
 import { RiArrowRightSLine } from 'react-icons/ri'
 import { FaFacebook, FaTwitter, FaYoutube, FaInstagram } from 'react-icons/fa'
-import { footerItems } from '../utills/footerItems'
+import { footerItems, secondaryLinks } from '../utills/footerItems'
 import { EmailSignup, Icon} from './'
 
 const FooterLinks = ({title, links}) => (
@@ -21,6 +21,10 @@ const FooterLinks = ({title, links}) => (
             }
         </ul>
     </div>
+)
+
+const SecondaryLink = ({title, link}) => (
+    <a href={link} className='text-sm font-bold'> {title} </a>
 )
 
 const Footer = () => {
@@ -58,6 +62,15 @@ const Footer = () => {
             
             <div className="w-full lg:w-[30%] mb-[4.166vw] 2xl:mb-[66.656px] pr-2 order-4">
                 <FooterLinks title={footerItems[2].title} links={footerItems[2].links} />
+            </div>
+        </div>
+
+        {/* Footer Secondary List */}
+        <div className="">
+            <div className="flex gap-6">
+                {
+                    secondaryLinks.map(({id, title, link}) => <SecondaryLink key={id} title={title} link={link} />)
+                }
             </div>
         </div>
     </div>

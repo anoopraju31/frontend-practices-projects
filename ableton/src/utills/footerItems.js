@@ -63,3 +63,36 @@ export const footerItems = [
 		],
 	},
 ]
+
+export const secondaryLinks = [
+	{
+		id: 1,
+		title: 'Contact Us',
+		link: '/contact',
+	},
+	{
+		id: 2,
+		title: 'Press Resources',
+		link: '/press-resoruces',
+	},
+	{
+		id: 3,
+		title: 'Legal Info',
+		link: '/legal-info',
+	},
+	{
+		id: 4,
+		title: 'Privacy Policy',
+		link: '/privacy',
+	},
+	{
+		id: 5,
+		title: 'Cookie Settings',
+		link: '/cookie',
+	},
+	{
+		id: 6,
+		title: 'Imprint',
+		link: '/imprint',
+	},
+]
