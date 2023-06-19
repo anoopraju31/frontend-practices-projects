@@ -68,10 +68,10 @@ const Footer = () => {
                     <FooterLinks title={footerItems[0].title} links={footerItems[0].links} />
                 </div>
                 <div className='mt-4 flex gap-3'>
-                    <Icon background='bg-[#3477F2]' link='https://www.facebook.com' MediaIcon={<FaFacebook />} />
-                    <Icon background='bg-[#1DA1F2]' link='https://www.facebook.com' MediaIcon={<FaTwitter />} />
-                    <Icon background='bg-[#FF001D]' link='https://www.facebook.com' MediaIcon={<FaYoutube />} />
-                    <Icon background='bg-[#F77737]' link='https://www.facebook.com' MediaIcon={<FaInstagram />} />
+                    <Icon id={1} background='bg-[#3477F2]' link='https://www.facebook.com' MediaIcon={<FaFacebook />} />
+                    <Icon id={2} background='bg-[#1DA1F2]' link='https://www.facebook.com' MediaIcon={<FaTwitter />} />
+                    <Icon id={3} background='bg-[#FF001D]' link='https://www.facebook.com' MediaIcon={<FaYoutube />} />
+                    <Icon id={4} background='bg-[#F77737]' link='https://www.facebook.com' MediaIcon={<FaInstagram />} />
                 </div>
             </div>
 
@@ -148,7 +148,9 @@ const Footer = () => {
                 className='text-sm font-bold flex gap-6 items-center'
             >
                 <p> Made in Berlin </p>
-                <Logo />
+                <a href="/">
+                    <Logo />
+                </a>
             </motion.div>
         </div>
     </div>
