@@ -96,3 +96,23 @@ export const secondaryLinks = [
 		link: '/imprint',
 	},
 ]
+
+export const languages = [
+	'English',
+	'Deutsch',
+	'Français',
+	'日本語',
+	'简体中文',
+	'Español',
+]
+
+export const locations = [
+	'United States',
+	'United Kingdom',
+	'France',
+	'Germany',
+	'Canada',
+	'Japan',
+	'China',
+	'India',
+]

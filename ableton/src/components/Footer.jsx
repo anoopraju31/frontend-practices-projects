@@ -2,7 +2,7 @@ import React from 'react'
 import { RiArrowRightSLine } from 'react-icons/ri'
 import { FaFacebook, FaTwitter, FaYoutube, FaInstagram } from 'react-icons/fa'
 import { footerItems, secondaryLinks } from '../utills/footerItems'
-import { EmailSignup, Icon, Logo} from './'
+import { Dropdown, EmailSignup, Icon, Logo} from './'
 
 const FooterLinks = ({title, links}) => (
     <div>
@@ -62,6 +62,14 @@ const Footer = () => {
             
             <div className="w-full lg:w-[30%] mb-[4.166vw] 2xl:mb-[66.656px] pr-2 order-4">
                 <FooterLinks title={footerItems[2].title} links={footerItems[2].links} />
+            </div>
+
+            <div className='w-full lg:w-[30%] mb-[4.166vw] 2xl:mb-[66.656px] pr-2 order-5'>
+                    <h1 className='mb-1 text-sm xl:text-lg font-bold'> Language and Location </h1>
+                    <div>
+                        <Dropdown />
+                        <Dropdown />
+                    </div>
             </div>
         </div>
 
