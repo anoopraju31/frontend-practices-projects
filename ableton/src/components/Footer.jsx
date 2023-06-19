@@ -2,7 +2,7 @@ import React from 'react'
 import { RiArrowRightSLine } from 'react-icons/ri'
 import { FaFacebook, FaTwitter, FaYoutube, FaInstagram } from 'react-icons/fa'
 import { footerItems, secondaryLinks } from '../utills/footerItems'
-import { EmailSignup, Icon} from './'
+import { EmailSignup, Icon, Logo} from './'
 
 const FooterLinks = ({title, links}) => (
     <div>
@@ -66,11 +66,16 @@ const Footer = () => {
         </div>
 
         {/* Footer Secondary List */}
-        <div className="">
-            <div className="flex gap-6">
+        <div className="flex flex-col lg:flex-row lg:justify-between lg:items-center gap-6">
+            <div className="flex gap-2 lg:gap-6 flex-col lg:flex-row">
                 {
                     secondaryLinks.map(({id, title, link}) => <SecondaryLink key={id} title={title} link={link} />)
                 }
+            </div>
+
+            <div className='text-sm font-bold flex gap-6 items-center'>
+                <p> Made in Berlin </p>
+                <Logo />
             </div>
         </div>
     </div>
