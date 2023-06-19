@@ -2,7 +2,7 @@ import React from 'react'
 import { RiArrowRightSLine } from 'react-icons/ri'
 import { FaFacebook, FaTwitter, FaYoutube, FaInstagram } from 'react-icons/fa'
 import { footerItems } from '../utills/footerItems'
-import Icon from './Icon'
+import { EmailSignup, Icon} from './'
 
 const FooterLinks = ({title, links}) => (
     <div>
@@ -53,6 +53,7 @@ const Footer = () => {
                     <h1 className='mb-1 font-bold'> Sign up to newsletter </h1>
                     <p> Enter your email address to stay up to date with the latest offers, tutorials, downloads, surveys and more. </p>
                 </div>
+                <EmailSignup />
             </div>
             
             <div className="w-[30%] mb-[4.166vw] 2xl:mb-[66.656px] pr-2">
