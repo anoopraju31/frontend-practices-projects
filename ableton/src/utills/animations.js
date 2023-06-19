@@ -30,3 +30,14 @@ export const expand = {
 		opacity: 1,
 	},
 }
+
+export const textPop = {
+	start: {
+		y: 100,
+		opacity: 0,
+	},
+	stop: {
+		y: 0,
+		opacity: 1,
+	},
+}
