@@ -1,30 +1,58 @@
 import React from 'react'
 import { RiArrowRightSLine } from 'react-icons/ri'
 import { FaFacebook, FaTwitter, FaYoutube, FaInstagram } from 'react-icons/fa'
+import { motion} from 'framer-motion'
 import { footerItems, languages, locations, secondaryLinks } from '../utills/footerItems'
 import { Dropdown, EmailSignup, Icon, Logo} from './'
+import { textPop } from '../utills/animations'
 
 const FooterLinks = ({title, links}) => (
     <div>
-        { title !== '' && <h1 className='mb-1 font-bold text-sm xl:text-lg'> {title} </h1> }
+        { 
+            title !== '' && 
+            <motion.h1 
+                variants={textPop} 
+                initial='start' 
+                whileInView='stop' 
+                transition={{duration: 1 }} 
+                className='mb-1 font-bold text-sm xl:text-lg'
+            > 
+                {title} 
+            </motion.h1> 
+        }
 
         <ul>
             {
                 links.map(({id, title, link}) => (
-                    <li key={id}>
+                    <motion.li 
+                        variants={textPop} 
+                        initial='start' 
+                        whileInView='stop' 
+                        transition={{duration: 1, delay: 0.1 * id}} 
+                        key={id}
+                    >
                         <a href={link} className='mb-1 flex gap-1 items-center text-sm xl:text-lg'>
                              {title} 
                             <RiArrowRightSLine />
                         </a>
-                    </li>
+                    </motion.li>
                 ))
             }
         </ul>
     </div>
 )
 
-const SecondaryLink = ({title, link}) => (
-    <a href={link} className='text-sm font-bold'> {title} </a>
+const SecondaryLink = ({id, title, link}) => (
+    <motion.a 
+        variants={textPop} 
+        initial='start' 
+        whileInView='stop' 
+        transition={{duration: 1, delay: 0.1 * id }}
+        href={link} 
+        className='text-sm font-bold'
+    > 
+        {title} 
+    </motion.a>
 )
 
 const Footer = () => {
@@ -54,8 +82,24 @@ const Footer = () => {
             
             <div className="w-full lg:w-[40%] mb-[4.166vw] 2xl:mb-[66.656px] order-1 lg:order-3">
                 <div className='text-sm xl:text-lg'>
-                    <h1 className='mb-1 font-bold'> Sign up to newsletter </h1>
-                    <p> Enter your email address to stay up to date with the latest offers, tutorials, downloads, surveys and more. </p>
+                    <motion.h1 
+                        variants={textPop} 
+                        initial='start' 
+                        whileInView='stop' 
+                        transition={{duration: 1 }}
+                        className='mb-1 font-bold'
+                    > 
+                        Sign up to newsletter 
+                    </motion.h1>
+
+                    <motion.p 
+                        variants={textPop} 
+                        initial='start' 
+                        whileInView='stop' 
+                        transition={{duration: 1, delay: .6 }}
+                    > 
+                        Enter your email address to stay up to date with the latest offers, tutorials, downloads, surveys and more. 
+                    </motion.p>
                 </div>
                 <EmailSignup />
             </div>
@@ -65,11 +109,26 @@ const Footer = () => {
             </div>
 
             <div className='w-full lg:w-[30%] mb-[4.166vw] 2xl:mb-[66.656px] order-5'>
-                    <h1 className='mb-3 text-sm xl:text-lg font-bold'> Language and Location </h1>
-                    <div className='flex gap-3 sm:gap-1 flex-col sm:flex-row'>
+                    <motion.h1 
+                        variants={textPop} 
+                        initial='start' 
+                        whileInView='stop' 
+                        transition={{duration: 1 }}
+                        className='mb-3 text-sm xl:text-lg font-bold'
+                    > 
+                        Language and Location 
+                    </motion.h1>
+
+                    <motion.div 
+                        variants={textPop} 
+                        initial='start' 
+                        whileInView='stop' 
+                        transition={{duration: 1 }}
+                        className='flex gap-3 sm:gap-1 flex-col sm:flex-row'
+                    >
                         <Dropdown value='english' options={languages} />
                         <Dropdown value='India' options={locations}/>
-                    </div>
+                    </motion.div>
             </div>
         </div>
 
@@ -77,14 +136,20 @@ const Footer = () => {
         <div className="flex flex-col lg:flex-row lg:justify-between lg:items-center gap-6">
             <div className="flex gap-2 lg:gap-6 flex-col lg:flex-row">
                 {
-                    secondaryLinks.map(({id, title, link}) => <SecondaryLink key={id} title={title} link={link} />)
+                    secondaryLinks.map(({id, title, link}) => <SecondaryLink key={id} id={id} title={title} link={link} />)
                 }
             </div>
 
-            <div className='text-sm font-bold flex gap-6 items-center'>
+            <motion.div 
+                variants={textPop} 
+                initial='start' 
+                whileInView='stop' 
+                transition={{duration: 1 , delay: 0.7}}
+                className='text-sm font-bold flex gap-6 items-center'
+            >
                 <p> Made in Berlin </p>
                 <Logo />
-            </div>
+            </motion.div>
         </div>
     </div>
   )
