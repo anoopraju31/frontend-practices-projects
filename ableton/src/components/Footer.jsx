@@ -27,11 +27,11 @@ const Footer = () => {
   return (
     <div className='p-[8.33vw] 2xl:p-[133.28px] bg-white border-t-2 border-gray-200'>
         <div className='mb-[4.166vw] 2xl:mb-[66.656px]'>
-            <h1 className='text-xl md:text-3xl font-bold]'> Ableton </h1>
+            <h1 className='text-3xl lg:text-5xl font-bold'> Ableton </h1>
         </div>
 
         <div className="flex flex-wrap">
-            <div className='w-full lg:w-[30%] mb-[4.166vw] 2xl:mb-[66.656px]  order-2 lg:order-1'>
+            <div className='w-full lg:w-[30%] mb-[4.166vw] 2xl:mb-[66.656px] order-2 lg:order-1'>
                 <div>
                     <FooterLinks title={footerItems[0].title} links={footerItems[0].links} />
                 </div>
@@ -43,7 +43,7 @@ const Footer = () => {
                 </div>
             </div>
 
-            <div className="w-full lg:w-[30%] mb-[4.166vw] 2xl:mb-[66.656px]  order-3 lg:order-2">
+            <div className="w-full lg:w-[30%] mb-[4.166vw] 2xl:mb-[66.656px] order-3 lg:order-2">
                 <FooterLinks title={footerItems[1].title} links={footerItems[1].links} />
             </div>
 
