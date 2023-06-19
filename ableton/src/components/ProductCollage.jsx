@@ -1,6 +1,6 @@
 import React from 'react'
 import { motion} from 'framer-motion'
-import { diagonalRiseLeft, diagonalRiseRight } from '../utills/animations'
+import { diagonalRiseLeft, diagonalRiseRight, show } from '../utills/animations'
 
 const ProductCollage = ({position}) => {
   return (
@@ -8,7 +8,14 @@ const ProductCollage = ({position}) => {
       {
         position === 'right' && 
         <div className='max-w-[1600px] h-[58.33vw] 2xl:h-[932.8px] relative'>
-          <div className='w-[58.33%] h-[58.33vw] 2xl:h-[932.8px] absolute top-0 right-0 z-0 bg-[#fbffa7]' />
+          <motion.div 
+            variants={show} 
+            initial='start' 
+            whileInView='stop'  
+            transition={{duration: 3}}
+            className='w-[58.33%] h-[58.33vw] 2xl:h-[932.8px] absolute top-0 right-0 z-0 bg-[#fbffa7]' 
+          />
+          
           <motion.div 
             variants={diagonalRiseLeft} 
             initial='start' 
@@ -28,7 +35,14 @@ const ProductCollage = ({position}) => {
       {
         position === 'left' &&
         <div className='max-w-[1600px] h-[75vw] 2xl:h-[1200px] relative'>
-          <div className='w-[58.33%] h-[75vw] 2xl:h-[1200px] absolute top-0 left-0 bg-[#b6ffc0]' />
+          <motion.div 
+            variants={show} 
+            initial='start' 
+            whileInView='stop'  
+            transition={{duration: 3}} 
+            className='w-[58.33%] h-[75vw] 2xl:h-[1200px] absolute top-0 left-0 bg-[#b6ffc0]' 
+          />
+
           <div className='inline-block relative top-[8.33vw] 2xl:top-[133.28px] left-[8.33vw] 2xl:left-[133.28px] z-[10]'>
             <motion.div 
               variants={diagonalRiseLeft} 
@@ -60,7 +74,14 @@ const ProductCollage = ({position}) => {
       {
         position === 'middle' &&
         <div className='max-w-[1600px] h-[58.33vw] 2xl:h-[933.28px] relative'>
-          <motion.div className="w-[66.66vw] 2xl:w-[1066.56px] h-[58.33vw] 2xl:h-[933.28px] bg-[#D5B3FF] absolute top-0 left-[16.66vw] 2xl:left-[266.56px] z-0" />
+          <motion.div 
+            variants={show} 
+            initial='start' 
+            whileInView='stop'  
+            transition={{duration: 3}}
+            className="w-[66.66vw] 2xl:w-[1066.56px] h-[58.33vw] 2xl:h-[933.28px] bg-[#D5B3FF] absolute top-0 left-[16.66vw] 2xl:left-[266.56px] z-0" 
+          />
+          
           <motion.div 
             variants={diagonalRiseLeft} 
             initial='start' 

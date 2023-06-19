@@ -67,3 +67,12 @@ export const diagonalRiseRight = {
 		opacity: 1,
 	},
 }
+
+export const show = {
+	start: {
+		opacity: 0,
+	},
+	stop: {
+		opacity: 1,
+	},
+}
