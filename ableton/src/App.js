@@ -12,7 +12,7 @@ import { textBody } from './utills/textBody'
 
 const App = () => {
 	return (
-		<div className='max-w-[1600px] mx-auto bg-white'>
+		<div className='max-w-[1600px] mx-auto bg-white overflow-hidden'>
 			<Navbar />
 			<HeroSection />
 

@@ -41,3 +41,29 @@ export const textPop = {
 		opacity: 1,
 	},
 }
+
+export const diagonalRiseLeft = {
+	start: {
+		x: -100,
+		y: 100,
+		opacity: 0,
+	},
+	stop: {
+		x: 0,
+		y: 0,
+		opacity: 1,
+	},
+}
+
+export const diagonalRiseRight = {
+	start: {
+		x: 100,
+		y: 100,
+		opacity: 0,
+	},
+	stop: {
+		x: 0,
+		y: 0,
+		opacity: 1,
+	},
+}
