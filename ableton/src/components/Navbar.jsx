@@ -5,16 +5,22 @@ import { DropdownMenu, Logo, MoreDropdown } from './'
 import { navItems } from '../utills/navbarItems'
 import {useCurrentWidth} from '../hooks'
 import { AnimatePresence, motion} from 'framer-motion'
+import { textPop } from '../utills/animations'
 
-const NavItem = ({ title, link}) => (
-  <li>
-      <a 
-        className='text-base xl:text-lg font-medium' 
-        href={link}
-      > 
-        { title }
-      </a>
-  </li>
+const NavItem = ({ id, title, link}) => (
+  <motion.li
+    variants={textPop} 
+    initial='start' 
+    whileInView='stop' 
+    transition={{ duration: 1, delay: 0.1 * id }}
+  >
+    <a 
+      className='text-base xl:text-lg font-medium' 
+      href={link}
+    > 
+      { title }
+    </a>
+  </motion.li>
 )
 const Navbar = () => {
   const [showMore, setShowMore] = useState(false)
@@ -28,17 +34,28 @@ const Navbar = () => {
         transition={{duration: 1}}
         className={`p-5 z-[1000] flex justify-start lg:justify-between items-center ${showMenu && (currentWidth < 1024) && 'bg-blue-700'}`}>
         <div className='flex items-center gap-8'>
-          <a href='/'>
+          <motion.a 
+            href='/'
+            variants={textPop} 
+            initial='start' 
+            whileInView='stop' 
+            transition={{ duration: 1 }}
+          >
             <Logo isFillWhite={showMenu} />
-          </a>
+          </motion.a>
 
           <div>
             <ul className='hidden lg:flex gap-5 xl:gap-8'>
               {
-                navItems.map(({id, title, link, button}) => <NavItem key={id} title={title} link={link} button={button} />)
+                navItems.map(({id, title, link, button}) => <NavItem key={id} id={id} title={title} link={link} button={button} />)
               }
 
-              <li>
+              <motion.li
+                variants={textPop} 
+                initial='start' 
+                whileInView='stop' 
+                transition={{ duration: 1, delay: 0.7 }}
+              >
                 <div 
                   className='flex items-center gap-2 text-base xl:text-lg font-medium text-orange-400 cursor-pointer' 
                   onClick={() => setShowMore(prev => !prev)}
@@ -48,17 +65,27 @@ const Navbar = () => {
                     {showMore? <FaMinus /> : <FaPlus /> } 
                   </span>
                 </div>
-              </li>
+              </motion.li>
             </ul>
           </div>
         </div>
 
-        <div className='hidden lg:flex items-baseline gap-5'>
-          <h2 className='text-sm xl:text-lg font-medium text-blue-700'>
+        <div className='hidden lg:flex items-baseline gap-5 mr-6'>
+          <motion.h2 
+            variants={textPop} 
+            initial='start' 
+            whileInView='stop' 
+            transition={{ duration: 1, delay: 0.8 }}
+            className='text-sm xl:text-lg font-medium text-blue-700'>
             <a href="/"> Try Live for free </a>
-          </h2>
+          </motion.h2>
 
-          <a className='text-sm xl:text-base font-medium' href="/"> Log in or register </a>
+          <motion.a 
+            variants={textPop} 
+            initial='start' 
+            whileInView='stop' 
+            transition={{ duration: 1, delay: 0.9 }}
+            className='text-sm xl:text-base font-medium' href="/"> Log in or register </motion.a>
         </div>
 
         <div className={`flex lg:hidden items-center gap-3 text-lg font-medium ${showMenu && 'text-white'}`} onClick={() => setShowMenu(prev => !prev)}>
@@ -80,17 +107,32 @@ const Navbar = () => {
 
       <div className={`${showMenu && (currentWidth < 1024) && 'hidden'} w-full p-5 -z-50 bg-white border-t-2 border-gray-200`}>
         <ul className='flex gap-5'>
-          <li>
+          <motion.li
+            variants={textPop} 
+            initial='start' 
+            whileInView='stop' 
+            transition={{ duration: 1, delay: 0.1}}
+          >
             <a className='text-sm font-medium text-orange-400' href='/about'> About </a>
-          </li>
+          </motion.li>
           
-          <li>
+          <motion.li
+            variants={textPop} 
+            initial='start' 
+            whileInView='stop' 
+            transition={{ duration: 1, delay: 0.2}}
+          >
             <a className='text-sm font-medium' href='/jobs'> Jobs </a>
-          </li>
+          </motion.li>
 
-          <li>
+          <motion.li
+            variants={textPop} 
+            initial='start' 
+            whileInView='stop' 
+            transition={{ duration: 1, delay: 0.3}}
+          >
             <a className='text-sm font-medium' href='/apprenticeships'> Apprenticeships </a>
-          </li>
+          </motion.li>
         </ul>
       </div>
 
