@@ -1,4 +1,5 @@
 import {
+	Footer,
 	HeroSection,
 	JobTeaser,
 	JuanpeBolivar,
@@ -57,6 +58,8 @@ const App = () => {
 			/>
 
 			<JobTeaser />
+
+			<Footer />
 		</div>
 	)
 }
