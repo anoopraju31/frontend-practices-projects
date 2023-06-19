@@ -17,3 +17,16 @@ export const reveal = {
 		zIndex: -10,
 	},
 }
+
+export const expand = {
+	shrink: {
+		y: '100%',
+		scale: 0.3,
+		opacity: 0,
+	},
+	enlarge: {
+		y: 0,
+		scale: 1,
+		opacity: 1,
+	},
+}
