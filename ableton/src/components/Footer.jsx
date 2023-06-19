@@ -6,14 +6,14 @@ import { EmailSignup, Icon} from './'
 
 const FooterLinks = ({title, links}) => (
     <div>
-        { title !== '' && <h1 className='mb-1 font-bold text-lg'> {title} </h1> }
+        { title !== '' && <h1 className='mb-1 font-bold text-sm xl:text-lg'> {title} </h1> }
 
         <ul>
             {
                 links.map(({id, title, link}) => (
                     <li key={id}>
-                        <a href={link} className='mb-1 flex gap-1 items-center text-lg'>
-                            <span> {title} </span>
+                        <a href={link} className='mb-1 flex gap-1 items-center text-sm xl:text-lg'>
+                             {title} 
                             <RiArrowRightSLine />
                         </a>
                     </li>
@@ -31,7 +31,7 @@ const Footer = () => {
         </div>
 
         <div className="flex flex-wrap">
-            <div className='w-[30%] mb-[4.166vw] 2xl:mb-[66.656px] rp-2'>
+            <div className='w-full lg:w-[30%] mb-[4.166vw] 2xl:mb-[66.656px]  order-2 lg:order-1'>
                 <div>
                     <FooterLinks title={footerItems[0].title} links={footerItems[0].links} />
                 </div>
@@ -43,20 +43,20 @@ const Footer = () => {
                 </div>
             </div>
 
-            <div className="w-[30%] mb-[4.166vw] 2xl:mb-[66.656px] pr-2">
+            <div className="w-full lg:w-[30%] mb-[4.166vw] 2xl:mb-[66.656px]  order-3 lg:order-2">
                 <FooterLinks title={footerItems[1].title} links={footerItems[1].links} />
             </div>
 
             
-            <div className="w-[40%] mb-[4.166vw] 2xl:mb-[66.656px] pr-2">
-                <div className='text-lg'>
+            <div className="w-full lg:w-[40%] mb-[4.166vw] 2xl:mb-[66.656px] order-1 lg:order-3">
+                <div className='text-sm xl:text-lg'>
                     <h1 className='mb-1 font-bold'> Sign up to newsletter </h1>
                     <p> Enter your email address to stay up to date with the latest offers, tutorials, downloads, surveys and more. </p>
                 </div>
                 <EmailSignup />
             </div>
             
-            <div className="w-[30%] mb-[4.166vw] 2xl:mb-[66.656px] pr-2">
+            <div className="w-full lg:w-[30%] mb-[4.166vw] 2xl:mb-[66.656px] pr-2 order-4">
                 <FooterLinks title={footerItems[2].title} links={footerItems[2].links} />
             </div>
         </div>
