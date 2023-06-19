@@ -32,6 +32,9 @@ const Footer = () => {
             <div>
                 <FooterLinks title={footerItems[1].title} links={footerItems[1].links} />
             </div>
+            <div className='flex gap-4'>
+                
+            </div>
         </div>
     </div>
   )
