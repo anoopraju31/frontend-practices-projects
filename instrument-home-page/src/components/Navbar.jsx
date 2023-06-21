@@ -31,6 +31,10 @@ const Navbar = () => {
                     <NavLink link='/contact' title='contact'/>
                 </ul>
             </nav>
+
+            <div className='hidden lg:block px-hori py-verti'>
+                <Logo isMainLogo={true} />
+            </div>
         </div>
     )
 }
