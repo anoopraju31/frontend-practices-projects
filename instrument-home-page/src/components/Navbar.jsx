@@ -49,7 +49,13 @@ const Navbar = () => {
                     </ul>
 
                     <div className='hidden lg:block flex-1'>
-                        <NavMarquee /> 
+                        {
+                            isNavbarVisible && prevScrollPos !== 0?
+                            <span className='flex justify-center'>
+                                <Logo />
+                            </span> :
+                            <NavMarquee /> 
+                        } 
                     </div>
 
                     <ul className='hidden lg:flex items-center lg:gap-1 xl:gap-3'>
