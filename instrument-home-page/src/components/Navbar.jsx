@@ -1,5 +1,5 @@
 import React from 'react'
-import {NavLink} from '.'
+import {NavLink, NavMarquee} from '.'
 
 const Navbar = () => {
     return (
@@ -11,6 +11,9 @@ const Navbar = () => {
                     <NavLink link='/about' title='About'/>
                 </ul>
 
+                <div className='flex-1'>
+                    <NavMarquee />
+                </div>
 
                 <ul className='flex items-center gap-3'>
                     <NavLink link='/careers' title='careers'/>
