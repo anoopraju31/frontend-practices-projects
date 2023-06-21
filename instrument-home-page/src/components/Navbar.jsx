@@ -7,8 +7,10 @@ const Navbar = () => {
     return (
         <div className=''>
             <nav className='px-hori py-verti flex'>
-                <div className='flex-1'>
-                    <Logo />
+                <div className='flex lg:hidden flex-1 items-center'>
+                    <span className='w-52 aspect-[1827/190]'>
+                        <Logo />
+                    </span>
                 </div>
                 <ul className='flex items-center gap-6'>
                     <NavLink link='/work' title='Work'/>
