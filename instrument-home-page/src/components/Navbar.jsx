@@ -3,20 +3,20 @@ import {NavLink} from '.'
 
 const Navbar = () => {
     return (
-        <div className=' bg-orange-300'>
+        <div className=''>
             <nav className='px-hori py-verti flex'>
-                <div className='flex items-center gap-3'>
-                    <NavLink />
-                    <NavLink />
-                    <NavLink />
-                </div>
+                <ul className='flex items-center gap-3'>
+                    <NavLink link='/work' title='Work'/>
+                    <NavLink link='/service' title='Service'/>
+                    <NavLink link='/about' title='About'/>
+                </ul>
 
 
-                <div className='flex items-center gap-3'>
-                    <NavLink />
-                    <NavLink />
-                    <NavLink />
-                </div>
+                <ul className='flex items-center gap-3'>
+                    <NavLink link='/careers' title='careers'/>
+                    <NavLink link='/latest' title='latest'/>
+                    <NavLink link='/contact' title='contact'/>
+                </ul>
             </nav>
         </div>
     )
