@@ -30,8 +30,8 @@ const Navbar = () => {
 
     return (
         <div className='w-full'>
-            <div className={`w-full fixed ${isNavbarVisible ? 'top-0' : '-top-40'} transition-top duration-1000 ease-in-out ${isNavbarVisible? '' : 'h-nav-height-sm sm:h-nav-height-md lg:h-nav-height'} left-0 z-50`}>
-                <nav className='px-hori-sm sm:px-hori-md lg:px-hori py-verti-sm sm:py-verti-md lg:py-verti flex bg-white'>
+            <div className={`w-full fixed ${isNavbarVisible || (!isNavbarVisible && openMenu && currentWidth < 1024) ? 'top-0' : '-top-40'} transition-top duration-1000 ease-in-out ${!isNavbarVisible && !(openMenu && currentWidth < 1024)? '' : (openMenu && currentWidth < 1024)? 'min-h-screen' : 'h-nav-height-sm sm:h-nav-height-md lg:h-nav-height'} bg-white backdrop-blur-sm ${isNavbarVisible? 'flex justify-between flex-col' : ''} left-0 z-50`}>
+                <nav className='px-hori-sm sm:px-hori-md lg:px-hori py-verti-sm sm:py-verti-md lg:py-verti flex '>
                     <div className='flex lg:hidden flex-1 items-center'>
                         <span className=''>
                             <Logo />
