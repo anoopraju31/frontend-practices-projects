@@ -1,6 +1,7 @@
 export const menuItems = [
 	{
 		id: 1,
+		current: true,
 		title: 'Home',
 		link: '/',
 	},

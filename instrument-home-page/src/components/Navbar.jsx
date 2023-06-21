@@ -80,7 +80,7 @@ const Navbar = () => {
                     openMenu &&
                     <div className='block lg:hidden px-hori-sm sm:px-hori-md lg:px-hori py-verti-sm sm:py-verti-md lg:py-verti'>
                         {
-                            menuItems.map(({id, title, link}) => <NavMenuItem key={id} title={title} link={link} />)
+                            menuItems.map(({id, current, title, link}) => <NavMenuItem key={id} current={current} title={title} link={link} />)
                         }
                     </div>
                 }
