@@ -32,7 +32,7 @@ const Navbar = () => {
                 </ul>
             </nav>
 
-            <div className='hidden lg:block px-hori py-verti'>
+            <div className='hidden lg:block px-hori'>
                 <Logo isMainLogo={true} />
             </div>
         </div>
