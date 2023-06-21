@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { VscMenu } from 'react-icons/vsc'
+import { motion } from 'framer-motion'
 import {NavLink, NavMarquee} from '.'
 import { Logo } from './Logo'
 import { useCurrentWidth } from '../hooks'
@@ -48,7 +49,11 @@ const Navbar = () => {
                         <div className='block lg:hidden py-1' onClick={toggleMenu}> <VscMenu size={23} /> </div>
                     </ul>
 
-                    <div className='hidden lg:block flex-1'>
+                    <motion.div 
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        transition={{ duration: 1, delay: 1 }}
+                        className='hidden lg:block flex-1'>
                         {
                             isNavbarVisible && prevScrollPos !== 0?
                             <span className='flex justify-center'>
@@ -56,7 +61,7 @@ const Navbar = () => {
                             </span> :
                             <NavMarquee /> 
                         } 
-                    </div>
+                    </motion.div>
 
                     <ul className='hidden lg:flex items-center lg:gap-1 xl:gap-3'>
                         <NavLink link='/careers' title='careers'/>
