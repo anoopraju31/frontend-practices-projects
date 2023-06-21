@@ -1,3 +1,8 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root {
+    --padding-x: calc(0.033 * 100vw);
+    --padding-y: calc(0.011 * 100vw);
+}
