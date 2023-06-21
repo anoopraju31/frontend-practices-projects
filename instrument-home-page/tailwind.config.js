@@ -19,6 +19,10 @@ module.exports = {
 				'verti-md': 'var(--padding-y-md)',
 				'verti-sm': 'var(--padding-y-sm)',
 			},
+			minHeight: {
+				'menu-height-md': 'var(--menu-height-md)',
+				'menu-height-sm': 'var(--menu-height-sm)',
+			},
 		},
 	},
 	plugins: [],

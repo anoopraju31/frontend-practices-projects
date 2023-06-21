@@ -1,9 +1,12 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { VscMenu } from 'react-icons/vsc'
 import {NavLink, NavMarquee} from '.'
 import { Logo } from './Logo'
 
 const Navbar = () => {
+    const [openMenu, setOpenMenu] = useState(false)
+    const toggleMenu = () => setOpenMenu(prev => !prev)
+
     return (
         <div className=''>
             <nav className='px-hori-sm sm:px-hori-md lg:px-hori py-verti-sm sm:py-verti-md lg:py-verti flex'>
@@ -13,12 +16,15 @@ const Navbar = () => {
                     </span>
                 </div>
                 <ul className='flex items-center gap-6'>
-                    <div className='hidden sm:flex items-center gap-3 lg:gap-1 xl:gap-3'>
-                        <NavLink link='/work' title='Work'/>
-                        <NavLink link='/service' title='Service'/>
-                        <NavLink link='/about' title='About'/>
-                    </div>
-                    <div className='block lg:hidden'> <VscMenu size={20} /> </div>
+                    {
+                        !openMenu && 
+                        <div className='hidden sm:flex items-center gap-3 lg:gap-1 xl:gap-3'>
+                            <NavLink link='/work' title='Work'/>
+                            <NavLink link='/service' title='Service'/>
+                            <NavLink link='/about' title='About'/>
+                        </div>
+                    }
+                    <div className='block lg:hidden py-1' onClick={toggleMenu}> <VscMenu size={23} /> </div>
                 </ul>
 
                 <div className='hidden lg:block flex-1'>
@@ -35,6 +41,11 @@ const Navbar = () => {
             <div className='hidden lg:block px-hori'>
                 <Logo isMainLogo={true} />
             </div>
+
+            {
+                openMenu &&
+                <div className='block lg:hidden min-h-menu-height-sm sm:min-h-menu-height-md w-full bg-black'></div>
+            }
         </div>
     )
 }
