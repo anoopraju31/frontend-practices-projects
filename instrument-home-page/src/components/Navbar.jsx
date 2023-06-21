@@ -2,9 +2,12 @@ import React, { useState } from 'react'
 import { VscMenu } from 'react-icons/vsc'
 import {NavLink, NavMarquee} from '.'
 import { Logo } from './Logo'
+import { useCurrentWidth } from '../hooks'
 
 const Navbar = () => {
     const [openMenu, setOpenMenu] = useState(false)
+    const currentWidth = useCurrentWidth()
+
     const toggleMenu = () => setOpenMenu(prev => !prev)
 
     return (
@@ -17,7 +20,7 @@ const Navbar = () => {
                 </div>
                 <ul className='flex items-center gap-6'>
                     {
-                        !openMenu && 
+                        (!openMenu || (currentWidth >= 1024)) && 
                         <div className='hidden sm:flex items-center gap-3 lg:gap-1 xl:gap-3'>
                             <NavLink link='/work' title='Work'/>
                             <NavLink link='/service' title='Service'/>
