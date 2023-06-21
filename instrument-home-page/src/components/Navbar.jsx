@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react'
 import { VscMenu } from 'react-icons/vsc'
 import { motion } from 'framer-motion'
-import {NavLink, NavMarquee, NavMenu} from '.'
+import {NavLink, NavMarquee, NavMenuItem} from '.'
 import { Logo } from './Logo'
 import { useCurrentWidth } from '../hooks'
+import { menuItems } from '../utills/navMenuItems'
 
 const Navbar = () => {
     const [openMenu, setOpenMenu] = useState(false)
@@ -34,7 +35,8 @@ const Navbar = () => {
 
     return (
         <div className='w-full'>
-            <div className={`w-full fixed ${isNavbarVisible || (!isNavbarVisible && openMenu && currentWidth < 1024) ? 'top-0' : '-top-40'} transition-top duration-1000 ease-in-out ${!isNavbarVisible && !(openMenu && currentWidth < 1024)? '' : (openMenu && currentWidth < 1024)? 'min-h-screen' : 'h-nav-height-sm sm:h-nav-height-md lg:h-nav-height'} ${openMenu && currentWidth < 1024? 'bg-[#ffffff75]' : 'bg-white'} backdrop-blur-2xl ${isNavbarVisible? 'flex justify-between flex-col' : ''} left-0 z-50`}>
+            <div className={`w-full fixed ${isNavbarVisible || (!isNavbarVisible && openMenu && currentWidth < 1024) ? 'top-0' : '-top-40'} transition-top duration-1000 ease-in-out ${!isNavbarVisible && !(openMenu && currentWidth < 1024)? '' : (openMenu && currentWidth < 1024)? 'h-screen' : 'h-nav-height-sm sm:h-nav-height-md lg:h-nav-height'} ${openMenu && currentWidth < 1024? 'bg-[#ffffff75]' : 'bg-white'} backdrop-blur-2xl ${isNavbarVisible? 'flex justify-between flex-col' : ''} left-0 z-50`}>
+
                 <nav className='px-hori-sm sm:px-hori-md lg:px-hori py-verti-sm sm:py-verti-md lg:py-verti flex '>
                     <div className='flex lg:hidden flex-1 items-center'>
                         <span className=''>
@@ -76,8 +78,10 @@ const Navbar = () => {
 
                 {
                     openMenu &&
-                    <div className='block lg:hidden'>
-                        <NavMenu />
+                    <div className='block lg:hidden px-hori-sm sm:px-hori-md lg:px-hori py-verti-sm sm:py-verti-md lg:py-verti'>
+                        {
+                            menuItems.map(({id, title, link}) => <NavMenuItem key={id} title={title} link={link} />)
+                        }
                     </div>
                 }
             </div>

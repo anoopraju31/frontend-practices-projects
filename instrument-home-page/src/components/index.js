@@ -1,4 +1,4 @@
 export { default as Navbar } from './Navbar'
 export { default as NavLink } from './NavLink'
 export { default as NavMarquee } from './NavMarquee'
-export { default as NavMenu } from './NavMenu'
+export { default as NavMenuItem } from './NavMenuItem'
