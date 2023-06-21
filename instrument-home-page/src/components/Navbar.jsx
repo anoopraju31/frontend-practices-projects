@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { VscMenu } from 'react-icons/vsc'
 import { motion } from 'framer-motion'
-import {NavLink, NavMarquee, NavMenuItem} from '.'
+import {MenuSocialItem, NavLink, NavMarquee, NavMenuItem} from '.'
 import { Logo } from './Logo'
 import { useCurrentWidth } from '../hooks'
 import { menuItems } from '../utills/navMenuItems'
@@ -35,7 +35,7 @@ const Navbar = () => {
 
     return (
         <div className='w-full'>
-            <div className={`w-full fixed ${isNavbarVisible || (!isNavbarVisible && openMenu && currentWidth < 1024) ? 'top-0' : '-top-40'} transition-top duration-1000 ease-in-out ${!isNavbarVisible && !(openMenu && currentWidth < 1024)? '' : (openMenu && currentWidth < 1024)? 'h-screen' : 'h-nav-height-sm sm:h-nav-height-md lg:h-nav-height'} ${openMenu && currentWidth < 1024? 'bg-[#ffffff75]' : 'bg-white'} backdrop-blur-2xl ${isNavbarVisible? 'flex justify-between flex-col' : ''} left-0 z-50`}>
+            <div className={`w-full fixed ${isNavbarVisible || (!isNavbarVisible && openMenu && currentWidth < 1024) ? 'top-0' : '-top-40'} left-0 transition-top duration-1000 ease-in-out ${!isNavbarVisible && !(openMenu && currentWidth < 1024)? '' : (openMenu && currentWidth < 1024)? 'h-screen' : 'h-nav-height-sm sm:h-nav-height-md lg:h-nav-height'} overflow-y-clip ${openMenu && currentWidth < 1024? 'bg-[#ffffff75]' : 'bg-white'} backdrop-blur-2xl ${openMenu? 'flex justify-between flex-col' : ''}`}>
 
                 <nav className='px-hori-sm sm:px-hori-md lg:px-hori py-verti-sm sm:py-verti-md lg:py-verti flex '>
                     <div className='flex lg:hidden flex-1 items-center'>
@@ -82,6 +82,15 @@ const Navbar = () => {
                         {
                             menuItems.map(({id, title, link}) => <NavMenuItem key={id} title={title} link={link} />)
                         }
+                    </div>
+                }
+
+                {
+                    openMenu &&
+                    <div className='flex lg:hidden px-hori-sm sm:px-hori-md lg:px-hori py-verti-sm sm:py-verti-md lg:py-verti justify-between'>
+                        <MenuSocialItem />
+                        <MenuSocialItem />
+                        <MenuSocialItem />
                     </div>
                 }
             </div>
