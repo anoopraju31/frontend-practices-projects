@@ -10,6 +10,13 @@
     --padding-y-md: calc(0.025 * 100vw);
     --padding-y-sm: calc(0.0410 * 100vw);
 
+    --nav-height: calc((0.022 * 100vw) + 31px);
+    --nav-height-md: calc((0.05 * 100vw) + 31px);
+    --nav-height-sm: calc((0.082 * 100vw) + 31px);
+
     --menu-height-md: calc(100vh - ((0.05 * 100vw) + 31px));
     --menu-height-sm: calc(100vh - ((0.082 * 100vw) + 31px));
+
+    --menu-font-size-lg: calc(41 / 640 * 100vw);
+    --menu-font-size-sm: calc(31 / 640 * 100vw);
 }
