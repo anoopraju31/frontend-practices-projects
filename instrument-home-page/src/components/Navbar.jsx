@@ -30,7 +30,7 @@ const Navbar = () => {
 
     return (
         <div className='w-full'>
-            <div className={`w-full fixed ${isNavbarVisible ? 'top-0' : '-top-40'} ${isNavbarVisible? '' : 'h-nav-height-sm sm:h-nav-height-md lg:h-nav-height'} left-0 z-50`}>
+            <div className={`w-full fixed ${isNavbarVisible ? 'top-0' : '-top-40'} transition-top duration-1000 ease-in-out ${isNavbarVisible? '' : 'h-nav-height-sm sm:h-nav-height-md lg:h-nav-height'} left-0 z-50`}>
                 <nav className='px-hori-sm sm:px-hori-md lg:px-hori py-verti-sm sm:py-verti-md lg:py-verti flex bg-white'>
                     <div className='flex lg:hidden flex-1 items-center'>
                         <span className=''>

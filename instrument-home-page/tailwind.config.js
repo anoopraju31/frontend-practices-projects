@@ -40,6 +40,9 @@ module.exports = {
 				'menu-lg': 'var(--menu-font-size-lg)',
 				'menu-sm': 'var(--menu-font-size-sm)',
 			},
+			transitionProperty: {
+				top: 'top',
+			},
 		},
 	},
 	plugins: [],
