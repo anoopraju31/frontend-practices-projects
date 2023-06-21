@@ -6,16 +6,18 @@ import { Logo } from './Logo'
 const Navbar = () => {
     return (
         <div className=''>
-            <nav className='px-hori py-verti flex'>
+            <nav className='px-hori-sm sm:px-hori-md lg:px-hori py-verti-sm sm:py-verti-md lg:py-verti flex'>
                 <div className='flex lg:hidden flex-1 items-center'>
-                    <span className='w-52 aspect-[1827/190]'>
+                    <span className=''>
                         <Logo />
                     </span>
                 </div>
                 <ul className='flex items-center gap-6'>
-                    <NavLink link='/work' title='Work'/>
-                    <NavLink link='/service' title='Service'/>
-                    <NavLink link='/about' title='About'/>
+                    <div className='hidden sm:flex items-center gap-3 lg:gap-1 xl:gap-3'>
+                        <NavLink link='/work' title='Work'/>
+                        <NavLink link='/service' title='Service'/>
+                        <NavLink link='/about' title='About'/>
+                    </div>
                     <div className='block lg:hidden'> <VscMenu size={20} /> </div>
                 </ul>
 
@@ -23,7 +25,7 @@ const Navbar = () => {
                     <NavMarquee />
                 </div>
 
-                <ul className='hidden lg:flex items-center gap-3'>
+                <ul className='hidden lg:flex items-center lg:gap-1 xl:gap-3'>
                     <NavLink link='/careers' title='careers'/>
                     <NavLink link='/latest' title='latest'/>
                     <NavLink link='/contact' title='contact'/>
