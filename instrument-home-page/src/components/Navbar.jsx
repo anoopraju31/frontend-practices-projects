@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { VscMenu } from 'react-icons/vsc'
 import { motion } from 'framer-motion'
-import {NavLink, NavMarquee} from '.'
+import {NavLink, NavMarquee, NavMenu} from '.'
 import { Logo } from './Logo'
 import { useCurrentWidth } from '../hooks'
 
@@ -72,7 +72,9 @@ const Navbar = () => {
 
                 {
                     openMenu &&
-                    <div className='block lg:hidden min-h-menu-height-sm sm:min-h-menu-height-md w-full bg-[#0000003d]'></div>
+                    <div className='block lg:hidden'>
+                        <NavMenu />
+                    </div>
                 }
             </div>
             
