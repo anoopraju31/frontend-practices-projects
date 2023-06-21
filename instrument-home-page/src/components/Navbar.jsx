@@ -1,11 +1,15 @@
 import React from 'react'
 import { VscMenu } from 'react-icons/vsc'
 import {NavLink, NavMarquee} from '.'
+import { Logo } from './Logo'
 
 const Navbar = () => {
     return (
         <div className=''>
             <nav className='px-hori py-verti flex'>
+                <div className='flex-1'>
+                    <Logo />
+                </div>
                 <ul className='flex items-center gap-6'>
                     <NavLink link='/work' title='Work'/>
                     <NavLink link='/service' title='Service'/>
