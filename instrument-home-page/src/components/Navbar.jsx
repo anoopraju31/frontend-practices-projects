@@ -1,10 +1,13 @@
 import React, { useEffect, useState } from 'react'
 import { VscMenu } from 'react-icons/vsc'
+import { HiOutlineSquares2X2 } from 'react-icons/hi2'
+import { AiOutlineUnorderedList } from 'react-icons/ai'
+import { MdOutlineAlternateEmail } from 'react-icons/md'
 import { motion } from 'framer-motion'
 import {MenuSocialItem, NavLink, NavMarquee, NavMenuItem} from '.'
 import { Logo } from './Logo'
 import { useCurrentWidth } from '../hooks'
-import { menuItems } from '../utills/navMenuItems'
+import { menuItems, menuSocials } from '../utills/navMenuItems'
 
 const Navbar = () => {
     const [openMenu, setOpenMenu] = useState(false)
@@ -87,10 +90,10 @@ const Navbar = () => {
 
                 {
                     openMenu &&
-                    <div className='flex lg:hidden px-hori-sm sm:px-hori-md lg:px-hori py-verti-sm sm:py-verti-md lg:py-verti justify-between'>
-                        <MenuSocialItem />
-                        <MenuSocialItem />
-                        <MenuSocialItem />
+                    <div className='flex lg:hidden px-hori-sm sm:px-hori-md lg:px-hori py-verti-sm sm:py-verti-md lg:py-verti gap-6'>
+                        <MenuSocialItem Icon={<MdOutlineAlternateEmail />} title='instagram' link='/' />
+                        <MenuSocialItem Icon={<HiOutlineSquares2X2 />} title='twitter' link='/' />
+                        <MenuSocialItem Icon={<AiOutlineUnorderedList />} title='linkedin' link='/' />
                     </div>
                 }
             </div>
